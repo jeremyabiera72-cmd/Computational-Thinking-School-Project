@@ -1,0 +1,882 @@
+/* ============================================================
+   RESPONSIVE STYLESHEET — every page
+   All mobile / tablet rules live here. This file is linked LAST
+   on every HTML page so its overrides win over the page CSS.
+   Breakpoints: 1024 tablet · 860 mobile nav · 640 phone · 400 small phone
+   ============================================================ */
+
+/* ============================================
+   1. SHARED — touch behaviour on phones
+============================================ */
+
+@media (max-width: 860px) {
+    html {
+        /* Stop iOS from inflating text, and keep anchor jumps below the sticky bar */
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        scroll-padding-top: 78px;
+    }
+
+    body {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* No double-tap zoom delay, no accidental text selection while tapping cards */
+    a,
+    button,
+    .concept-card,
+    .daily-card,
+    .faq-question,
+    .answer-btn,
+    .question-nav-item {
+        touch-action: manipulation;
+    }
+
+    .concept-card,
+    .daily-card,
+    .faq-question,
+    .answer-btn {
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    /* 16px inputs: below that iOS/Android zoom the page in on focus.
+       The class selectors repeat the page rules so this file can out-specify them. */
+    input,
+    textarea,
+    select,
+    .field input,
+    .field textarea,
+    .chat-form input {
+        font-size: 16px;
+    }
+}
+
+/* Lock the page behind an open pop-up so only the sheet scrolls */
+body.popup-lock {
+    overflow: hidden;
+}
+
+/* ============================================
+   2. SHARED — navbar (all pages)
+============================================ */
+
+/* Hamburger button: desktop-hidden, shown by the 860px block */
+.menu-toggle {
+    display: none;
+    position: relative;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    position: absolute;
+    left: 5px;
+    width: 34px;
+    height: 2px;
+    background: #111;
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.menu-toggle span:first-child {
+    top: 16px;
+}
+
+.menu-toggle span:last-child {
+    top: 26px;
+}
+
+.menu-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(5px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-5px) rotate(-45deg);
+}
+
+@media (max-width: 860px) {
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 8px 5%;
+        padding-top: calc(8px + env(safe-area-inset-top));
+        gap: 12px;
+        background: rgba(237, 237, 237, 0.94);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+    }
+
+    .menu-toggle {
+        display: block;
+        flex-shrink: 0;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 40;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2px;
+        padding: 8px 5% 14px;
+        background: #ededed;
+        border-top: 1px solid #111;
+        box-shadow: 0 14px 26px rgba(0, 0, 0, 0.14);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    /* Comfortable 48px tap rows */
+    .nav-links a {
+        padding: 15px 0;
+        font-size: 14px;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .nav-links a:active {
+        color: #000;
+    }
+}
+
+@media (max-width: 400px) {
+    .brand-mark {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-name {
+        font-size: 9px;
+        letter-spacing: 0.8px;
+    }
+}
+
+/* ============================================
+   3. SHARED — hero, footer, chat assistant
+   (base rules live in sharedStyle.css)
+============================================ */
+
+@media (max-width: 1024px) {
+    .hero,
+    .page-footer {
+        width: 86%;
+    }
+
+    .hero {
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+        letter-spacing: -2px;
+    }
+}
+
+@media (max-width: 860px) {
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        gap: 30px;
+        padding: 26px 0 55px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        letter-spacing: -1.8px;
+    }
+
+    .hero-description {
+        max-width: 100%;
+    }
+
+    .MainImage {
+        width: 100%;
+        height: auto;
+    }
+
+    .page-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        width: 90%;
+        padding: 18px 0 45px;
+    }
+
+    .hero h1 {
+        font-size: 33px;
+        letter-spacing: -1.2px;
+    }
+
+    .eyebrow {
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+    }
+
+    .explore-link {
+        display: flex;
+        width: 100%;
+        max-width: 320px;
+        gap: 16px;
+        padding: 15px 16px;
+    }
+
+    /* Chat assistant becomes a bottom sheet */
+    .chat-button {
+        right: 16px;
+        bottom: calc(16px + env(safe-area-inset-bottom));
+        width: 52px;
+        height: 52px;
+        font-size: 21px;
+    }
+
+    .chat-popup {
+        top: auto;
+        right: 8px;
+        bottom: calc(78px + env(safe-area-inset-bottom));
+        left: 8px;
+        width: auto;
+        height: min(70vh, 460px);
+        border-radius: 16px;
+    }
+
+    .chat-messages {
+        -webkit-overflow-scrolling: touch;
+        padding: 12px;
+    }
+
+    .chat-form {
+        padding: 10px;
+        padding-bottom: calc(10px + env(safe-area-inset-bottom));
+    }
+}
+
+/* ============================================
+   4. HOME — homeStyle.css
+============================================ */
+
+@media (max-width: 1024px) {
+    .concepts-section,
+    .daily-section {
+        width: 86%;
+        padding: 34px 26px;
+    }
+
+    .concepts-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .daily-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 860px) {
+    .concepts-section,
+    .daily-section {
+        width: 90%;
+        margin: 30px auto 55px;
+        padding: 28px 18px;
+    }
+
+    .concepts-header,
+    .daily-header {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-bottom: 26px;
+        padding-bottom: 22px;
+    }
+
+    .concepts-heading,
+    .daily-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .concepts-heading h2,
+    .daily-heading h2 {
+        font-size: 31px;
+        letter-spacing: -1.1px;
+    }
+
+    .concepts-heading p,
+    .daily-heading p {
+        max-width: 100%;
+    }
+
+    .concept-card,
+    .daily-card {
+        min-height: 0;
+    }
+
+    .popUpOv {
+        padding: 14px;
+    }
+
+    .popBox {
+        max-height: 86vh;
+        padding: 22px 18px;
+    }
+
+    .popBox-body {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+}
+
+@media (max-width: 640px) {
+    .concepts-grid,
+    .daily-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    /* Tighten the cards so one screen shows more of the list */
+    .concept-card,
+    .daily-card {
+        padding: 20px 16px;
+    }
+
+    .concept-top,
+    .daily-card-top {
+        margin-bottom: 22px;
+    }
+
+    .concept-card p,
+    .daily-card p {
+        margin-bottom: 18px;
+        line-height: 1.7;
+    }
+
+    .concepts-footer,
+    .daily-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .daily-footer a {
+        padding: 10px 0;
+    }
+
+    /* Pop-up becomes a bottom sheet */
+    .popUpOv {
+        align-items: flex-end;
+        padding: 0;
+    }
+
+    .popBox {
+        max-width: none;
+        max-height: 92vh;
+        margin: 0;
+        padding: 18px 16px calc(18px + env(safe-area-inset-bottom));
+        border-radius: 18px 18px 0 0;
+        -webkit-overflow-scrolling: touch;
+        animation: sheet-up 0.22s ease-out;
+    }
+
+    .popBox-top button {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .popBox-left h2 {
+        font-size: 23px;
+    }
+
+    .popBox-img {
+        max-height: 210px;
+    }
+
+    .popBox-code {
+        padding: 12px;
+        font-size: 12px;
+    }
+}
+
+@keyframes sheet-up {
+    from {
+        transform: translateY(24px);
+        opacity: 0.4;
+    }
+}
+
+@media (max-width: 400px) {
+    .concepts-heading h2,
+    .daily-heading h2 {
+        font-size: 27px;
+    }
+
+    .popBox-left h2 {
+        font-size: 20px;
+    }
+}
+
+/* ============================================
+   5. ABOUT — about.css
+============================================ */
+
+@media (max-width: 860px) {
+    .hero {
+        gap: 32px;
+        padding: 26px 0 45px;
+    }
+
+    .team,
+    .concepts {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-right {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 640px) {
+    .team,
+    .concepts {
+        grid-template-columns: 1fr;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        padding: 14px 22px;
+        text-align: center;
+    }
+}
+
+/* ============================================
+   6. QUIZ — QuizArea.css
+============================================ */
+
+@media (max-width: 860px) {
+    .quiz-layout {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin: 18px 4%;
+    }
+
+    .quiz-box-top,
+    .question-content {
+        padding: 20px;
+    }
+
+    .quiz-box-bottom {
+        margin: 0 20px;
+    }
+
+    .quiz-sidebar {
+        padding: 22px 20px;
+    }
+
+    .quiz-result {
+        margin: 20px 4%;
+    }
+
+    .result-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 26px;
+        padding: 26px 20px;
+    }
+
+    .result-copy {
+        width: 100%;
+    }
+
+    .result-actions {
+        flex-wrap: wrap;
+        padding: 18px 20px;
+    }
+
+    .result-link {
+        margin-left: 0;
+        width: 100%;
+        padding-top: 6px;
+    }
+
+    .result-review {
+        padding: 6px 20px 22px;
+    }
+}
+
+@media (max-width: 640px) {
+    .quiz-intro-panel {
+        margin: 14px 4%;
+        padding: 26px 18px;
+    }
+
+    .quiz-intro-panel h1 {
+        font-size: 25px;
+    }
+
+    .quiz-box-top {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .question-content {
+        padding: 18px 16px 22px;
+    }
+
+    .question-content h2 {
+        font-size: 17px;
+        line-height: 1.55;
+    }
+
+    /* Full-width answers with a 52px tap target */
+    .answer-btn {
+        min-height: 52px;
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .question-navigation {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 9px;
+        padding: 12px 2px;
+    }
+
+    .question-nav-item {
+        width: 100%;
+        height: 42px;
+        padding: 0;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .quiz-box-bottom {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .previous-btn,
+    .next-btn {
+        width: 100%;
+        min-height: 46px;
+    }
+
+    .intro-btn {
+        width: 100%;
+        max-width: 320px;
+        min-height: 46px;
+    }
+
+    .result-ring {
+        flex-basis: 148px;
+        width: 148px;
+        height: 148px;
+        align-self: center;
+    }
+
+    .ring-value-text {
+        font-size: 31px;
+    }
+
+    .result-copy h2 {
+        font-size: 25px;
+    }
+
+    .result-stats {
+        margin-top: 20px;
+        padding-top: 16px;
+    }
+
+    .result-stats > div {
+        margin-right: 22px;
+        padding-right: 22px;
+    }
+
+    .result-stats dd {
+        font-size: 21px;
+    }
+
+    .restart-quiz-btn,
+    .review-toggle {
+        flex: 1;
+        min-height: 46px;
+    }
+
+    .review-q {
+        font-size: 14px;
+    }
+}
+
+/* ============================================
+   7. FEEDBACK — FeedbackStyles.css
+============================================ */
+
+@media (max-width: 860px) {
+    .feedback-main {
+        grid-template-columns: 1fr;
+        padding: 0 5%;
+    }
+
+    .panel {
+        min-height: 0;
+        padding: 24px 20px;
+    }
+
+    /* 45px hit area around the 25px star icons */
+    .star {
+        padding: 10px;
+        margin: -10px;
+    }
+}
+
+@media (max-width: 640px) {
+    .feedback-main {
+        padding: 0 4%;
+        gap: 20px;
+    }
+
+    .panel {
+        padding: 22px 16px;
+    }
+
+    .field {
+        height: auto;
+        min-height: 54px;
+        padding: 12px 12px;
+    }
+
+    .field.area {
+        min-height: 140px;
+        align-items: flex-start;
+    }
+
+    button.submit {
+        width: 100%;
+        height: 50px;
+        margin-top: 26px;
+    }
+}
+
+/* ============================================
+   8. FAQ — FAQStyle.css
+============================================ */
+
+@media (max-width: 1024px) {
+    .faq-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .illustration {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .illustration-circle {
+        max-width: 300px;
+    }
+
+    .info-section {
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+}
+
+@media (max-width: 640px) {
+    .intro {
+        margin: 40px auto 35px;
+    }
+
+    .intro h1 {
+        font-size: 30px;
+    }
+
+    .eyebrow {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .faq-layout {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .faq-question {
+        min-height: 60px;
+        padding: 16px;
+        font-size: 15px;
+    }
+
+    .faq-answer p {
+        padding: 0 16px 20px;
+        font-size: 14px;
+    }
+
+    .faq-heading h2 {
+        font-size: 19px;
+    }
+
+    .info-section {
+        padding: 25px 20px;
+    }
+}
+
+/* ============================================
+   9. TOUCH SCREENS — drop :hover states that
+   would otherwise stay stuck after a tap
+============================================ */
+
+@media (hover: none) {
+    .nav-links a:hover,
+    .daily-footer a:hover {
+        color: #444;
+    }
+
+    .concept-card:hover,
+    .daily-card:hover {
+        background: #d6d6d6;
+        color: #111;
+        border-color: #333;
+        transform: none;
+    }
+
+    .concept-card:hover .concept-top,
+    .concept-card:hover .concept-arrow,
+    .daily-card:hover .daily-card-top,
+    .daily-card:hover .daily-card-top span:last-child {
+        color: #555;
+    }
+
+    .concept-card:hover .concept-arrow {
+        transform: none;
+    }
+
+    .concept-card:hover p,
+    .daily-card:hover p {
+        color: #484848;
+    }
+
+    .concept-card:hover .concept-example,
+    .daily-card:hover .daily-skill {
+        color: #555;
+        border-color: #aaa;
+    }
+
+    .explore-link:hover {
+        background: #111;
+        gap: 24px;
+    }
+
+    .answer-btn:hover:not(:disabled) {
+        border-color: #ccc;
+        background: #fff;
+    }
+
+    .previous-btn:hover:not(:disabled),
+    .next-btn:hover:not(:disabled),
+    .intro-btn:hover {
+        background: #222;
+        color: #fff;
+    }
+
+    .question-nav-item:hover .question-nav-number {
+        background: #eee;
+        color: #555;
+    }
+
+    .faq-item:hover {
+        border-color: var(--border);
+    }
+
+    .faq-question:hover {
+        background: transparent;
+    }
+
+    .chat-button:hover {
+        transform: none;
+    }
+}
+
+/* ============================================
+   10. SHORT / LANDSCAPE PHONES
+============================================ */
+
+@media (max-height: 520px) and (orientation: landscape) {
+    .navbar {
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    .hero {
+        padding: 14px 0 26px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .popUpOv {
+        align-items: center;
+        padding: 10px;
+    }
+
+    .popBox {
+        max-height: 88vh;
+        border-radius: 14px;
+    }
+
+    .popBox-img {
+        max-height: 120px;
+    }
+
+    .chat-popup {
+        height: 82vh;
+    }
+}
+
+/* ============================================
+   11. ACCESSIBILITY — reduced motion (all pages)
+============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

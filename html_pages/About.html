@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>About | 15 Computational Thinking</title>
+        <link rel="stylesheet" href="../styles/about.css" />
+        <link rel="stylesheet" href="../styles/sharedStyle.css" />
+        <link rel="stylesheet" href="../styles/responsive.css" />
+    </head>
+    <body>
+        <header class="navbar">
+            <a href="#" class="brand">
+                <img src="../imageAssets/popUpImage/logo.jpg" class="brand-mark" />
+                <span class="brand-name">15 COMPUTATIONAL THINKING</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="../html_pages/home.html">Home</a>
+                <a href="../html_pages/About.html" class="active">About Page</a>
+                <a href="../html_pages/QuizPage.html">Quiz</a>
+                <a href="../html_pages/Feedback.html">Feedback</a>
+                <a href="../html_pages/FAQPage.html">FAQ</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- HERO -->
+            <section class="hero container" id="about">
+                <div class="hero-text">
+                    <p class="label">About this website</p>
+                    <h1>Problem solving is something you already do every day.</h1>
+                    <p class="lead">
+                        Computational thinking is a way to solve problems by breaking them down, finding patterns, and
+                        writing clear steps. This site shows where it hides in ordinary life.
+                    </p>
+                    <a href="#concepts" class="btn">Explore the concepts</a>
+                </div>
+                <div class="placeholder" role="img" aria-label="Image placeholder">
+                    <img src="../imageAssets/AboutImageAssets/MainPic.png" />
+                        <circle cx="64" cy="22" r="6" />
+                        <path d="M12 56 L38 26 L52 44 L60 36 L88 56 Z" />
+                    </svg>
+                </div>
+            </section>
+
+            <!-- CONCEPTS (four columns) -->
+            <section class="band" id="concepts">
+                <div class="container">
+                    <div class="concepts">
+                        <button class="concept" aria-expanded="false">
+                            <span class="dot">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <rect x="3" y="3" width="7.5" height="7.5" rx="1.4" />
+                                    <rect x="13.5" y="3" width="7.5" height="7.5" rx="1.4" />
+                                    <rect x="3" y="13.5" width="7.5" height="7.5" rx="1.4" />
+                                    <rect
+                                        x="13.5"
+                                        y="13.5"
+                                        width="7.5"
+                                        height="7.5"
+                                        rx="1.4"
+                                        stroke-dasharray="2.6 2.4"
+                                    />
+                                </svg>
+                            </span>
+                            <h3>Decomposition</h3>
+                            <p>Break a big problem into small, manageable parts.</p>
+                            <span class="more"
+                                >Example: planning a party by splitting it into food, guests, and music.</span
+                            >
+                        </button>
+                        <button class="concept" aria-expanded="false">
+                            <span class="dot">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <circle cx="10.5" cy="10.5" r="6.5" />
+                                    <path d="M15.4 15.4 21 21" />
+                                    <circle cx="7.6" cy="10.5" r="1.15" class="solid" />
+                                    <circle cx="10.5" cy="10.5" r="1.15" class="solid" />
+                                    <circle cx="13.4" cy="10.5" r="1.15" class="solid" />
+                                </svg>
+                            </span>
+                            <h3>Pattern recognition</h3>
+                            <p>Notice what repeats so you can predict what comes next.</p>
+                            <span class="more">Example: knowing the bus runs late every rainy Monday.</span>
+                        </button>
+                        <button class="concept" aria-expanded="false">
+                            <span class="dot">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path d="M3.5 4.5h17l-6.7 8v6.3l-3.6 2v-8.3z" />
+                                </svg>
+                            </span>
+                            <h3>Abstraction</h3>
+                            <p>Keep the details that matter and ignore the rest.</p>
+                            <span class="more">Example: a subway map shows stops, not every street.</span>
+                        </button>
+                        <button class="concept" aria-expanded="false">
+                            <span class="dot">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path d="M10 5.5h10M10 12h10M10 18.5h10" />
+                                    <circle cx="4.8" cy="5.5" r="1.8" />
+                                    <circle cx="4.8" cy="12" r="1.8" />
+                                    <circle cx="4.8" cy="18.5" r="1.8" />
+                                    <path d="M4.8 7.3v2.9M4.8 13.8v2.9" />
+                                </svg>
+                            </span>
+                            <h3>Algorithms</h3>
+                            <p>Write clear steps that anyone can follow in order.</p>
+                            <span class="more">Example: a recipe that works for a stranger.</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTRIBUTORS -->
+            <section class="contributors container" id="contributors">
+                <p class="label">Contributors</p>
+                <h2>The people behind this website</h2>
+                <div class="team">
+                    <div class="member">
+                        <div class="avatar">
+                            <span class="initials">JA</span>
+                            <img src="../imageAssets/AboutImageAssets/Abiera.jpg" alt="Jeremy E. Abiera" onerror="this.remove()" />
+                        </div>
+                        <h3>Jeremy E. Abiera</h3>
+                        <h3>Leader</h3>
+                    </div>
+                    <div class="member">
+                        <div class="avatar">
+                            <span class="initials">DR</span>
+                            <img src="../imageAssets/AboutImageAssets/Robinos.jpg" alt="Drebb Irx D. Robiños" onerror="this.remove()" />
+                        </div>
+                        <h3>Drebb Irx D. Robiños</h3>
+                    </div>
+                    <div class="member">
+                        <div class="avatar">
+                            <span class="initials">NG</span>
+                            <img
+                                src="../imageAssets/AboutImageAssets/Gigare.jpeg"
+                                alt="Nielo Chryss A. Gigare"
+                                onerror="this.remove()"
+                            />
+                        </div>
+                        <h3>Nielo Chryss A. Gigare</h3>
+                    </div>
+                    <div class="member">
+                        <div class="avatar">
+                            <span class="initials">JA</span>
+                            <img
+                                src="../imageAssets/AboutImageAssets/Abatay.jpg"
+                                alt="John Kenneth P. Abatay"
+                                onerror="this.remove()"
+                            />
+                        </div>
+                        <h3>John Kenneth P. Abatay</h3>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+                        <footer class="page-footer" id="footer">
+            <span>15 COMPUTATIONAL THINKING IN DAILY LIFE</span>
+            <span>THINK CLEARLY. SOLVE BETTER.</span>
+        </footer>
+
+         <!--Message area(GEMINI API KEY USED - FROM YUMI DEV SYSTEM)-->
+
+        <button id="chatButton" class="chat-button">✉</button>
+
+        <div id="chatPopup" class="chat-popup">
+            <div class="chat-header">
+                <div>
+                    <h3>YUMI Assistant</h3>
+                    <p>Ask about computational thinking</p>
+                </div>
+                <button id="closeChat">✕</button>
+            </div>
+
+            <div id="chatMessages" class="chat-messages">
+                <div class="response-container">Hello I Am Yumi a support assistant! What would you like to learn?</div>
+            </div>
+
+            <form id="chatForm" class="chat-form">
+                <input id="chatInput" type="text" placeholder="Type your question..." required />
+                <button type="submit">➤</button>
+            </form>
+        </div>
+
+
+        <script src="../functions/about.js"></script>
+        <script src="../functions/shared.js"></script>
+        <script src="../functions/responsiveNav.js"></script>
+    </body>
+</html>

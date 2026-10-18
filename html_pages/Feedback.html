@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <link rel="stylesheet" href="../styles/FeedbackStyles.css" />
+        <link rel="stylesheet" href="../styles/sharedStyle.css" />
+        <link rel="stylesheet" href="../styles/responsive.css" />
+        <title>Feedback Form</title>
+    </head>
+
+    <body>
+        <header class="navbar">
+            <a href="#" class="brand">
+                <img src="../imageAssets/popUpImage/logo.jpg" class="brand-mark" />
+                <span class="brand-name">15 COMPUTATIONAL THINKING</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="../html_pages/home.html">Home</a>
+                <a href="../html_pages/About.html">About Page</a>
+                <a href="../html_pages/QuizPage.html">Quiz</a>
+                <a href="../html_pages/Feedback.html" class="active">Feedback</a>
+                <a href="../html_pages/FAQPage.html">FAQ</a>
+            </nav>
+        </header>
+
+        <main class="feedback-main">
+            <section class="panel">
+                <h1>Share your feedback</h1>
+                <p class="sub">Tell us what you think about our service.</p>
+                <form id="form" novalidate>
+                    <label class="field"
+                        ><span class="ico"></span
+                        ><input id="name" type="text" placeholder="Your name" autocomplete="name"
+                    /></label>
+                    <label class="field"
+                        ><span class="ico"></span
+                        ><input id="email" type="email" placeholder="Your email" autocomplete="email"
+                    /></label>
+                    <label class="field area"
+                        ><span class="ico"></span><textarea id="msg" placeholder="Your Feedback"></textarea>
+                    </label>
+                    <div class="err" id="err" role="alert"></div>
+                    <span class="lbl">Rating</span>
+                    <div class="stars" id="stars"></div>
+                    <button type="submit" class="submit">Submit</button>
+                </form>
+            </section>
+
+            <section class="panel">
+                <h2>Recent reviews</h2>
+                <p class="sub">What others are saying.</p>
+                <div class="reviews" id="reviews"></div>
+            </section>
+        </main>
+
+        <button id="chatButton" class="chat-button">✉</button>
+
+        <div id="chatPopup" class="chat-popup">
+            <div class="chat-header">
+                <div>
+                    <h3>YUMI Assistant</h3>
+                    <p>Ask about computational thinking</p>
+                </div>
+                <button id="closeChat">✕</button>
+            </div>
+
+            <div id="chatMessages" class="chat-messages">
+                <div class="response-container">Hello I Am Yumi a support assistant! What would you like to learn?</div>
+            </div>
+
+            <form id="chatForm" class="chat-form">
+                <input id="chatInput" type="text" placeholder="Type your question..." required />
+                <button type="submit">➤</button>
+            </form>
+        </div>
+
+        <footer class="page-footer" id="footer">
+            <span>15 COMPUTATIONAL THINKING IN DAILY LIFE</span>
+            <span>THINK CLEARLY. SOLVE BETTER.</span>
+        </footer>
+
+        <script src="../functions/Feedback.js"></script>
+        <script src="../functions/shared.js"></script>
+        <script src="../functions/responsiveNav.js"></script>
+    </body>
+</html>

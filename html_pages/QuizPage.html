@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>QuizPage</title>
+
+        <link rel="stylesheet" href="../styles/sharedStyle.css" />
+        <link rel="stylesheet" href="../styles/QuizArea.css" />
+        <link rel="stylesheet" href="../styles/responsive.css" />
+    </head>
+
+    <body>
+        <!-- NAVBAR -->
+        <header class="navbar">
+            <a href="#" class="brand">
+                <img src="../imageAssets/popUpImage/logo.jpg" class="brand-mark" />
+                <span class="brand-name">15 COMPUTATIONAL THINKING</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="../html_pages/home.html">Home</a>
+                <a href="../html_pages/About.html">About Page</a>
+                <a href="../html_pages/QuizPage.html" class="active">Quiz</a>
+                <a href="../html_pages/Feedback.html">Feedback</a>
+                <a href="../html_pages/FAQPage.html">FAQ</a>
+            </nav>
+        </header>
+
+        <main class="quiz-page">
+            <!-- INTRODUCTION -->
+            <section class="quiz-intro-panel" id="quizIntro">
+                <h1>Quiz Area</h1>
+                <p>Test your knowledge of Computational Thinking and challenge yourself with these questions.</p>
+                <button class="intro-btn" id="startQuizBtn" type="button">Start Quiz ↗</button>
+            </section>
+
+            <!-- QUIZ LAYOUT: VISIBLE BUT BLURRED INITIALLY -->
+            <section class="quiz-layout quiz-locked" id="quizLayout">
+                <!-- LEFT: QUESTION PANEL -->
+                <section class="quiz-box">
+                    <div class="quiz-box-top">
+                        <div>
+                            <p class="section-label">QUIZ SESSION</p>
+                            <h2 id="quizCategory">Computational Thinking</h2>
+                        </div>
+                        <span id="questionCount">QUESTION 1 / 10</span>
+                    </div>
+
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+
+                    <div class="question-content">
+                        <p class="question-label">YOUR QUESTION</p>
+
+                        <h2 id="questionText">What does HTML stand for?</h2>
+
+                        <div class="answer-list" id="answerList">
+                            <!-- Preview answers appear here -->
+                        </div>
+
+                        <p id="answerFeedback" aria-live="polite"></p>
+                    </div>
+
+                    <div class="quiz-box-bottom">
+                        <button class="previous-btn" id="prevBtn" type="button" disabled>← Previous</button>
+
+                        <span id="scoreText">Score: 0</span>
+
+                        <button class="next-btn" id="nextBtn" type="button" disabled>Next →</button>
+                    </div>
+                </section>
+
+                <!-- RIGHT: SIDEBAR -->
+                <aside class="quiz-sidebar">
+                    <div class="sidebar-heading">
+                        <p class="section-label">YOUR PROGRESS</p>
+                    </div>
+
+                    <div class="progress-dots" id="progressDots"></div>
+
+                    <div class="sidebar-divider"></div>
+
+                    <div class="question-navigation" id="questionNavigation"></div>
+                </aside>
+            </section>
+
+            <!-- RESULTS -->
+            <section class="quiz-result" id="quizResult" hidden>
+                <p class="section-label">QUIZ COMPLETED</p>
+                <h2>Well done!</h2>
+                <p id="finalScore">Your final score: 0 / 10</p>
+
+                <button class="intro-btn" id="retryBtn" type="button">Try Again ↻</button>
+            </section>
+        </main>
+
+        <footer class="page-footer" id="footer">
+            <span>15 COMPUTATIONAL THINKING IN DAILY LIFE</span>
+            <span>THINK CLEARLY. SOLVE BETTER.</span>
+        </footer>
+
+        <script src="../functions/Quiz.js" defer></script>
+        <script src="../functions/responsiveNav.js" defer></script>
+    </body>
+</html>

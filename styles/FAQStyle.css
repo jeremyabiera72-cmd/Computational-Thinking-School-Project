@@ -1,0 +1,357 @@
+/* ==================================
+   1. GLOBAL SETTINGS
+================================== */
+
+:root {
+    --background: #f5f5f5;
+    --white: #ffffff;
+    --text: #202124;
+    --muted: #737373;
+    --border: #d5d5d5;
+    --gray: #bfc1c2;
+    --soft-gray: #eeeeee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+button {
+    font: inherit;
+}
+
+section,
+main,
+footer {
+    scroll-margin-top: 25px;
+}
+
+/* ==================================
+   3. INTRODUCTION
+================================== */
+
+.intro {
+    max-width: 760px;
+    margin: 55px auto 48px;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.eyebrow {
+    margin-bottom: 17px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.intro h1 {
+    margin-bottom: 18px;
+    font-size: clamp(36px, 4vw, 46px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.description {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* ==================================
+   4. FAQ MAIN LAYOUT
+================================== */
+
+.faq-layout {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5% 70px;
+    display: grid;
+    grid-template-columns: 0.85fr 1.65fr;
+    align-items: center;
+    gap: 55px;
+}
+
+/* ==================================
+   5. LEFT ILLUSTRATION
+================================== */
+
+.illustration {
+    text-align: center;
+}
+
+.illustration-circle {
+    position: relative;
+    width: 100%;
+    max-width: 390px;
+    aspect-ratio: 1;
+    margin: 0 auto 25px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--soft-gray);
+}
+
+.question-bubble {
+    position: absolute;
+    z-index: 2;
+    top: 21%;
+    left: 15%;
+    width: 43%;
+    height: 37%;
+    display: grid;
+    place-items: center;
+    border: 4px solid #969a9b;
+    border-radius: 28px;
+    background: #fafafa;
+    color: #777c7e;
+    font-size: 85px;
+    font-weight: bold;
+    transform: rotate(-8deg);
+}
+
+.question-bubble::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 22%;
+    width: 23px;
+    height: 23px;
+    border-left: 4px solid #969a9b;
+    border-bottom: 4px solid #969a9b;
+    background: #fafafa;
+    transform: skew(-15deg) rotate(-20deg);
+}
+
+.answer-bubble {
+    position: absolute;
+    right: 16%;
+    bottom: 24%;
+    width: 36%;
+    height: 30%;
+    display: grid;
+    place-items: center;
+    border-radius: 22px;
+    background: #c5c7c8;
+    color: white;
+    font-size: 26px;
+    letter-spacing: 3px;
+}
+
+.answer-bubble::after {
+    content: "";
+    position: absolute;
+    right: 15%;
+    bottom: -14px;
+    width: 20px;
+    height: 20px;
+    background: #c5c7c8;
+    transform: skew(15deg) rotate(20deg);
+}
+
+.decor {
+    position: absolute;
+    right: 16%;
+    width: 27px;
+    height: 4px;
+    border-radius: 5px;
+    background: #b0b2b3;
+}
+
+.decor-one {
+    top: 25%;
+    transform: rotate(-70deg);
+}
+
+.decor-two {
+    top: 33%;
+    right: 10%;
+    transform: rotate(-50deg);
+}
+
+.decor-three {
+    top: 40%;
+    right: 8%;
+    transform: rotate(-20deg);
+}
+
+.illustration h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.illustration > p {
+    max-width: 310px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ==================================
+   6. FAQ HEADING
+================================== */
+
+.faq-section {
+    min-width: 0;
+}
+
+.faq-heading {
+    margin-bottom: 20px;
+}
+
+.faq-heading h2 {
+    margin-bottom: 5px;
+    font-size: 21px;
+}
+
+.faq-heading p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ==================================
+   7. FAQ CARDS
+================================== */
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.faq-item {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: var(--white);
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.faq-item:hover {
+    border-color: #aeb0b1;
+}
+
+.faq-item:has(.faq-question[aria-expanded="true"]) {
+    border-color: #b7b9ba;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.faq-item h3 {
+    font-size: inherit;
+    font-weight: normal;
+}
+
+.faq-question {
+    width: 100%;
+    min-height: 65px;
+    padding: 19px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.faq-question:hover {
+    background: #fafafa;
+}
+
+.faq-question:focus-visible {
+    outline: 3px solid #888;
+    outline-offset: -4px;
+}
+
+.icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    color: #606060;
+    font-size: 25px;
+    font-weight: normal;
+    transition: transform 0.2s ease;
+}
+
+.faq-question[aria-expanded="true"] .icon {
+    transform: rotate(180deg);
+}
+
+/* ==================================
+   8. FAQ ANSWERS
+   IMPORTANT: hidden answers stay hidden.
+================================== */
+
+.faq-answer[hidden] {
+    display: none !important;
+}
+
+.faq-answer:not([hidden]) {
+    display: block;
+    animation: revealAnswer 0.25s ease;
+}
+
+.faq-answer p {
+    padding: 0 25px 24px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+@keyframes revealAnswer {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================================
+   10. FOOTER
+================================== */
+
+.footer {
+    margin-top: 55px;
+    padding: 30px 5%;
+    border-top: 1px solid var(--border);
+    background: var(--white);
+    text-align: center;
+}
+
+.footer h2 {
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.footer p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.footer .copyright {
+    margin-top: 15px;
+}
+
+/* Tablet / mobile / reduced-motion rules live in styles/responsive.css */

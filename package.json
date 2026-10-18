@@ -1,0 +1,16 @@
+{
+  "name": "school_projects_final",
+  "version": "1.0.0",
+  "description": "Contact Us(dummy no backend) - Drebb Irx Dalisay Robinos About page - Kenneth abatay lesson page - Neil Chryss gegare",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^18.0.8",
+    "express": "^5.3.0",
+    "openai": "^7.36.0"
+  }
+}

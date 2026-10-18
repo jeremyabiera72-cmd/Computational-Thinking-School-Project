@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>15 Computational Thinking in Daily Life</title>
+        <link rel="stylesheet" href="../styles/homeStyle.css" />
+        <link rel="stylesheet" href="../styles/sharedStyle.css" />
+        <link rel="stylesheet" href="../styles/responsive.css" />
+    </head>
+    <body>
+        <header class="navbar">
+            <a href="#" class="brand">
+                <img src="../imageAssets/popUpImage/logo.jpg" class="brand-mark" />
+                <span class="brand-name">15 COMPUTATIONAL THINKING</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#" class="active">Home</a>
+                <a href="../html_pages/About.html">About Page</a>
+                <a href="../html_pages/QuizPage.html">Quiz</a>
+                <a href="../html_pages/Feedback.html">Feedback</a>
+                <a href="../html_pages/FAQPage.html">FAQ</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <p class="eyebrow">THINK · ANALYZE · SOLVE</p>
+
+                    <h1>
+                        Computational<br />
+                        Thinking in<br />
+                        <span>Daily Life.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Discover how computational thinking helps us understand problems, recognize patterns, and find
+                        better solutions in our everyday lives.
+                    </p>
+
+                    <a href="#concepts" class="explore-link">
+                        EXPLORE THE TOPIC
+                        <span>↗</span>
+                    </a>
+                </div>
+
+                <div class="hero-visual">
+                    <img src="../imageAssets/popUpImage/main.png" alt="Main Image" class="MainImage" />
+                </div>
+            </section>
+
+            <section class="concepts-section" id="concepts">
+                <div class="concepts-header">
+                    <div class="concepts-label">
+                        <span>01</span>
+                        <span>THE CORE CONCEPTS</span>
+                    </div>
+
+                    <div class="concepts-heading">
+                        <h2>Four ways to think<br />differently.</h2>
+                        <p>Learn how computational thinking turns everyday problems into manageable steps.</p>
+                    </div>
+                </div>
+
+                <div class="concepts-grid">
+                    <div
+                        class="concept-card"
+                        onclick="
+                            PopExpand(
+                                'Decomposition',
+                                '01 / CORE CONCEPT',
+                                'Break a complex problem into smaller, simpler parts that are easier to solve.',
+                                'Instead of facing one big problem at once, you split it into parts. Each part can be understood and solved on its own, then the solved parts are put back together into a complete answer.',
+                                'Problem: Organize a school fair\n\nPart 1  Venue      → book the hall\nPart 2  Budget     → collect contributions\nPart 3  Programs   → plan the activities\nPart 4  Publicity  → posters and social posts\n\nSolve each part, then combine them.',
+                                'A small part is easier than the whole problem.|Solve the parts in any sensible order.|Combine the parts back into one solution.',
+                                '../imageAssets/HomeImageAssets/containA.jpg',
+                            )
+                        "
+                    >
+                        <div class="concept-top">
+                            <span>01</span>
+                            <span class="concept-arrow">↗</span>
+                        </div>
+                        <h3>Decomposition</h3>
+                        <p>Break a complex problem into smaller, simpler parts that are easier to solve.</p>
+                        <div class="concept-example">EXAMPLE — PLANNING A SCHOOL PROJECT</div>
+                    </div>
+
+                    <div
+                        class="concept-card"
+                        onclick="
+                            PopExpand(
+                                'Pattern Recognition',
+                                '02 / CORE CONCEPT',
+                                'Identify similarities, repeated details, and patterns in different situations.',
+                                'You compare several situations and look for what repeats. Once a pattern is clear you can predict what happens next and reuse a solution that already worked instead of solving from scratch.',
+                                'Every weekday 8 AM   → heavy traffic\nEvery weekday 9 AM   → light traffic\nEvery weekend morning → light traffic\n\nPattern:   The peak hour is 8 AM.\nPrediction: Leaving at 9 means less delay.',
+                                'Look for what repeats across cases.|Describe the pattern in your own words.|Use it to predict and decide.',
+                                '../imageAssets/HomeImageAssets/ContainB.jpg',
+                            )
+                        "
+                    >
+                        <div class="concept-top">
+                            <span>02</span>
+                            <span class="concept-arrow">↗</span>
+                        </div>
+                        <h3>Pattern Recognition</h3>
+                        <p>Identify similarities, repeated details, and patterns in different situations.</p>
+                        <div class="concept-example">EXAMPLE — RECOGNIZING TRAFFIC PATTERNS</div>
+                    </div>
+
+                    <div
+                        class="concept-card"
+                        onclick="
+                            PopExpand(
+                                'Abstraction',
+                                '03 / CORE CONCEPT',
+                                'Focus on important information while ignoring details that are unnecessary.',
+                                'You keep only the details that matter for the problem at hand and drop everything else. The result is a simple model of a complex thing — easier to understand, easier to reason about.',
+                                'The real city   → buildings, people, shops, trees\nA map of it     → roads, turns, distance\n\nIgnored: everything that does not change the route\nKept:    the roads and the turns you need',
+                                'Ask what the problem actually needs.|Ignore details that change nothing.|Build a simple model of a complex thing.',
+                                '../imageAssets/HomeImageAssets/ContainC.jpg',
+                            )
+                        "
+                    >
+                        <div class="concept-top">
+                            <span>03</span>
+                            <span class="concept-arrow">↗</span>
+                        </div>
+                        <h3>Abstraction</h3>
+                        <p>Focus on important information while ignoring details that are unnecessary.</p>
+                        <div class="concept-example">EXAMPLE — USING A MAP TO FIND A ROUTE</div>
+                    </div>
+
+                    <div
+                        class="concept-card"
+                        onclick="
+                            PopExpand(
+                                'Algorithms',
+                                '04 / CORE CONCEPT',
+                                'Create a logical sequence of instructions to complete a task or solve a problem.',
+                                'You write the solution as an ordered list of steps. Anyone — or any machine — that follows the same steps in the same order reaches the same result.',
+                                'Task: Make a cup of coffee\n\n1. Boil water\n2. Put coffee in the cup\n3. Pour the water\n4. Stir, then add sugar\n5. Serve\n\nSame steps + same order = same result',
+                                'The order matters as much as the steps.|Keep each step clear and checkable.|A good algorithm can be repeated.',
+                                '../imageAssets/HomeImageAssets/ContainD.jpg',
+                            )
+                        "
+                    >
+                        <div class="concept-top">
+                            <span>04</span>
+                            <span class="concept-arrow">↗</span>
+                        </div>
+                        <h3>Algorithms</h3>
+                        <p>Create a logical sequence of instructions to complete a task or solve a problem.</p>
+                        <div class="concept-example">EXAMPLE — FOLLOWING A RECIPE</div>
+                    </div>
+                </div>
+
+                <div class="concepts-footer">
+                    <span>THINK CLEARLY. SOLVE BETTER.</span>
+                    <span>FOUR FUNDAMENTAL CONCEPTS ↘</span>
+                </div>
+            </section>
+
+            <section class="daily-section" id="daily-examples">
+                <div class="daily-header">
+                    <div class="daily-label">
+                        <span>02</span>
+                        <span>COMPUTATIONAL THINKING AROUND US</span>
+                    </div>
+
+                    <div class="daily-heading">
+                        <h2>15 examples.<br />One smarter way to think.</h2>
+                        <p>
+                            Computational thinking is not limited to computers. It helps us solve ordinary problems
+                            every day.
+                        </p>
+                    </div>
+                </div>
+
+                <!--area of 15 Computational thinking around us(container with hover effects)-->
+                <div class="daily-grid">
+                    <article
+                        class="daily-card"
+                        onclick="
+                            PopExpand(
+                                'Planning a School Project',
+                                '01 / SCHOOL',
+                                'Divide a large project into smaller tasks such as research, writing, designing, and presenting.',
+                                'You break your school project into clear phases. Each phase becomes a smaller, manageable task. You tackle them one by one until the whole project is done.',
+                                '1. Project: Science Fair\nChoose a topic\n2. Do the research\n3. Create the experiment\n4. Write the report\n5. Build the display board',
+                                'Identify all the tasks first.|Work on one task at a time.|Check each task off when done.',
+                                '../imageAssets/HomeImageAssets/containA.jpg',
+                            )
+                        "
+                    >
+                        <div class="daily-card-top">
+                            <span>01 / SCHOOL</span>
+                            <span>↗</span>
+                        </div>
+                        <h3>Planning a School Project</h3>
+                        <p>
+                            Divide a large project into smaller tasks such as research, writing, designing, and
+                            presenting.
+                        </p>
+                        <div class="daily-skill">DECOMPOSITION</div>
+                    </article>
+
+                    <article
+                        class="daily-card"
+                        onclick="
+                            PopExpand(
+                                'Recognizing Traffic Patterns',
+                                '02 / TRAVEL',
+                                'Notice when roads become crowded and choose a better time or route for traveling.',
+                                'You observe traffic at different times and remember which routes get congested. You then use that pattern to pick the best time to leave.',
+                                'Monday 8 AM -> Heavy traffic on Main St.\nMonday 9 AM -> Light traffic on Main St.\nConclusion: Leave at 9 AM to avoid delays.',
+                                'Observe traffic at multiple times.|Record the pattern you notice.|Use the pattern to plan smarter trips.',
+                                '../imageAssets/HomeImageAssets/ContainB.jpg',
+                            )
+                        "
+                    >
+                        <div class="daily-card-top">
+                            <span>02 / TRAVEL</span>
+                            <span>↗</span>
+                        </div>
+                        <h3>Recognizing Traffic Patterns</h3>
+                        <p>Notice when roads become crowded and choose a better time or route for traveling.</p>
+                        <div class="daily-skill">PATTERN RECOGNITION</div>
+                    </article>
+
+                    <article
+                        class="daily-card"
+                        onclick="
+                            PopExpand(
+                                'Using a Navigation App',
+                                '03 / NAVIGATION',
+                                'Focus on important roads and directions while following a route to your destination.',
+                                'A navigation app hides unnecessary details like building names and only shows the roads you need. It calculates the best route using an algorithm.',
+                                'Input: Start = Home, End = School\nApp ignores: building names, alleys\nApp shows: main roads, turns, distance\nOutput: Fastest route in 12 minutes',
+                                'Focus only on the information you need.|Ignore details that are not relevant.|Follow the steps in the correct order.',
+                                '../imageAssets/HomeImageAssets/ContainC.jpg',
+                            )
+                        "
+                    >
+                        <div class="daily-card-top">
+                            <span>03 / NAVIGATION</span>
+                            <span>↗</span>
+                        </div>
+                        <h3>Using a Navigation App</h3>
+                        <p>Focus on important roads and directions while following a route to your destination.</p>
+                        <div class="daily-skill">ABSTRACTION + ALGORITHMS</div>
+                    </article>
+
+                    <article
+                        class="daily-card"
+                        onclick="
+                            PopExpand(
+                                'Following a Recipe',
+                                '04 / COOKING',
+                                'Follow instructions in the correct order to prepare a meal successfully.',
+                                'A recipe is a set of step-by-step instructions — just like an algorithm. Each step must be done in the right order for the dish to turn out correctly.',
+                                'Step 1: Boil water\nStep 2: Add pasta\nStep 3: Cook for 10 minutes\nStep 4: Drain and add sauce\nStep 5: Serve hot',
+                                'Follow each step in order.|Do not skip or rearrange steps.|Check each step before moving to the next.',
+                                '../imageAssets/HomeImageAssets/ContainD.jpg',
+                            )
+                        "
+                    >
+                        <div class="daily-card-top">
+                            <span>04 / COOKING</span>
+                            <span>↗</span>
+                        </div>
+                        <h3>Following a Recipe</h3>
+                        <p>Follow instructions in the correct order to prepare a meal successfully.</p>
+                        <div class="daily-skill">ALGORITHMS</div>
+                    </article>
+
+                    <article
+                        class="daily-card"
+                        onclick="
+                            PopExpand(
+                                'Organizing Study Materials',
+                                '05 / STUDY',
+                                'Group notes, books, and files by subject so information is easier to find.',
+                                'You sort all your materials into labelled folders or sections. When you need something, you know exactly where to look — saving time and reducing confusion.',
+                                'Before: Random pile of notes\nAfter organizing:\n[Math] -> formulas, worksheets\n[Science] -> lab notes, diagrams\n[English] -> essays, vocabulary',
+                                'Group related items together.|Label each group clearly.|Review your organization regularly.',
+                                '../imageAssets/HomeImageAssets/ContainE.jpg',
+                            )
+                        "
+                    >
+                        <div class="daily-card-top">
+                            <span>05 / STUDY</span>
+                            <span>↗</span>
+                        </div>
+                        <h3>Organizing Study Materials</h3>
+                        <p>Group notes, books, and files by subject so information is easier to find.</p>
+                        <div class="daily-skill">CLASSIFICATION</div>
+                    </article>
+
+                    <article
+                        class="daily-card"
+                        onclick="
+                            PopExpand(
+                                'Grocery Shopping',
+                                '06 / SHOPPING',
+                                'Sort items into categories and plan an efficient route through the grocery store.',
+                                'You group your shopping list by store section — produce, dairy, bakery. Then you plan your path through the store to avoid backtracking and save time.',
+                                'Shopping List -> Grouped:\n[Produce]: apples, carrots\n[Dairy]: milk, cheese\n[Bakery]: bread\nRoute: Produce -> Dairy -> Bakery',
+                                'Group items by store section.|Plan your path before you start.|Avoid going back to sections you already visited.',
+                                '../imageAssets/HomeImageAssets/ContainF.jpg',
+                            )
+                        "
+                    >
+                        <div class="daily-card-top">
+                            <span>06 / SHOPPING</span>
+                            <span>↗</span>
+                        </div>
+                        <h3>Grocery Shopping</h3>
+                        <p>Sort items into categories and plan an efficient route through the grocery store.</p>
+                        <div class="daily-skill">DECOMPOSITION + OPTIMIZATION</div>
+                    </article>
+
+                    <article
+                        class="daily-card"
+                        onclick="
+                            PopExpand(
+                                'Managing a Budget',
+                                '07 / FINANCES',
+                                'Calculate income and expenses to decide how much money to spend and save.',
+                                'You list your income and all expenses, then use logic to decide what to prioritize. If expenses are more than income, you adjust your spending until the budget is balanced.',
+                                'Monthly Income:  ₱5,000\nExpenses:\n  Rent       ₱2,000\n  Food       ₱1,200\n  Transport  ₱500\nSavings:         ₱1,300',
+                                'Track all income and expenses.|Prioritize needs over wants.|Adjust spending when the balance is negative.',
+                                '../imageAssets/HomeImageAssets/ContainG.jpg',
+                            )
+                        "
+                    >
+                        <div class="daily-card-top">
+                            <span>07 / FINANCES</span>
+                            <span>↗</span>
+                        </div>
+                        <h3>Managing a Budget</h3>
+                        <p>Calculate income and expenses to decide how much money to spend and save.</p>
+                        <div class="daily-skill">LOGICAL REASONING</div>
+                    </article>
+
+                    <article
+                        class="daily-card"
+                        onclick="
+                            PopExpand(
+                                'Sorting Laundry',
+                                '08 / HOUSEHOLD',
+                                'Separate clothes by color, fabric, and washing requirements before doing laundry.',
+                                'You classify clothes into groups before washing. Each group gets washed differently to prevent damage — whites separate from darks, delicates from heavy fabrics.',
+                                'Unsorted pile -> Classified:\n[Whites]: t-shirts, socks\n[Darks]: jeans, black shirts\n[Delicates]: silk, wool\nEach group -> different wash setting',
+                                'Sort before you wash, not after.|Check fabric care labels.|Never mix darks with whites.',
+                                '../imageAssets/HomeImageAssets/ContainH.jpg',
+                            )
+                        "
+                    >
+                        <div class="daily-card-top">
+                            <span>08 / HOUSEHOLD</span>
+                            <span>↗</span>
+                        </div>
+                        <h3>Sorting Laundry</h3>
+                        <p>Separate clothes by color, fabric, and washing requirements before doing laundry.</p>
+                        <div class="daily-skill">CLASSIFICATION</div>
+                    </article>
+
+                    <article
+                        class="daily-card"
+                        onclick="
+                            PopExpand(
+                                'Creating a Daily Schedule',
+                                '09 / TIME',
+                                'Arrange activities according to deadlines, importance, and available time.',
+                                'You list all your tasks and sort them by urgency and importance. Then you assign time slots to each task, making sure the most critical ones come first.',
+                                'Tasks for today:\n6:00 AM  - Morning exercise\n7:30 AM  - Breakfast\n8:00 AM  - Study Math (deadline today)\n12:00 PM - Lunch\n2:00 PM  - Review Science',
+                                'List all your tasks first.|Sort by deadline and importance.|Assign realistic time slots to each task.',
+                                '../imageAssets/HomeImageAssets/ContainI.jpg',
+                            )
+                        "
+                    >
+                        <div class="daily-card-top">
+                            <span>09 / TIME</span>
+                            <span>↗</span>
+                        </div>
+                        <h3>Creating a Daily Schedule</h3>
+                        <p>Arrange activities according to deadlines, importance, and available time.</p>
+                        <div class="daily-skill">ALGORITHMS + PRIORITIZATION</div>
+                    </article>
+
+                    <article
+                        class="daily-card"
+                        onclick="
+                            PopExpand(
+                                'Troubleshooting a Computer',
+                                '10 / TECHNOLOGY',
+                                'Check possible causes one at a time, from power connections to software settings.',
+                                'When a computer does not work, you systematically test each possible cause. You eliminate causes one by one until you find the problem — just like debugging code.',
+                                'Problem: Screen is black\nCheck 1: Is it plugged in?  -> Yes\nCheck 2: Is it turned on?   -> Yes\nCheck 3: Is the monitor on? -> No!\nFix: Turn on the monitor.',
+                                'Start with the simplest possible cause.|Test one thing at a time.|Eliminate causes until you find the issue.',
+                                '../imageAssets/HomeImageAssets/ContainJ.jpg',
+                            )
+                        "
+                    >
+                        <div class="daily-card-top">
+                            <span>10 / TECHNOLOGY</span>
+                            <span>↗</span>
+                        </div>
+                        <h3>Troubleshooting a Computer</h3>
+                        <p>Check possible causes one at a time, from power connections to software settings.</p>
+                        <div class="daily-skill">DECOMPOSITION + LOGIC</div>
+                    </article>
+
+                    <article
+                        class="daily-card"
+                        onclick="
+                            PopExpand(
+                                'Comparing Products',
+                                '11 / DECISIONS',
+                                'Compare price, quality, and features before choosing which product to buy.',
+                                'You look at different options and check their price, quality, and features. Then, you pick the one that gives you the best value for your needs.',
+                                'Laptop A  -  ₱30,000  -  8GB RAM  -  256GB SSD\nLaptop B  -  ₱37,500  -  16GB RAM -  512GB SSD\nLaptop C  -  ₱25,000  -  8GB RAM  -  128GB SSD\n\nIf you need more storage and better performance,\nLaptop B may be the best choice.',
+                                'Look at the price.|Check the quality and features.|Choose the option that gives you the best value.',
+                                '../imageAssets/HomeImageAssets/ContainK.jpg',
+                            )
+                        "
+                    >
+                        <div class="daily-card-top">
+                            <span>11 / DECISIONS</span>
+                            <span>↗</span>
+                        </div>
+                        <h3>Comparing Products</h3>
+                        <p>Compare price, quality, and features before choosing which product to buy.</p>
+                        <div class="daily-skill">ABSTRACTION + DECISION-MAKING</div>
+                    </article>
+
+                    <article
+                        class="daily-card"
+                        onclick="
+                            PopExpand(
+                                'Cleaning a Room',
+                                '12 / HOUSEHOLD',
+                                'Split cleaning into smaller tasks such as organizing the desk, making the bed, and sweeping.',
+                                'Instead of feeling overwhelmed by a messy room, you break cleaning into small steps. Each task is simple and quick. Completing them one at a time gets the whole room clean.',
+                                'Room Cleaning Checklist:\n[ ] Make the bed\n[ ] Organize the desk\n[ ] Collect and throw trash\n[ ] Sweep the floor\n[ ] Wipe the surfaces',
+                                'Break the big task into small steps.|Tackle one area at a time.|Check each task off your list as you go.',
+                                '../imageAssets/HomeImageAssets/ContainL.jpg',
+                            )
+                        "
+                    >
+                        <div class="daily-card-top">
+                            <span>12 / HOUSEHOLD</span>
+                            <span>↗</span>
+                        </div>
+                        <h3>Cleaning a Room</h3>
+                        <p>
+                            Split cleaning into smaller tasks such as organizing the desk, making the bed, and sweeping.
+                        </p>
+                        <div class="daily-skill">DECOMPOSITION</div>
+                    </article>
+
+                    <article
+                        class="daily-card"
+                        onclick="
+                            PopExpand(
+                                'Unlocking a Smartphone',
+                                '13 / SECURITY',
+                                'The device checks whether your password or biometric information matches before granting access.',
+                                'The device checks your input against a stored value. If the condition is true — the password matches — access is granted. If false, access is denied.',
+                                'IF entered_password == stored_password:\n    GRANT access\nELSE:\n    DENY access\n    Increment failed attempts\n    IF attempts >= 5: Lock device',
+                                'The device uses a true/false condition to decide.|Biometrics work the same way as passwords.|Too many failed attempts trigger a lockout.',
+                                '../imageAssets/HomeImageAssets/ContainM.jpg',
+                            )
+                        "
+                    >
+                        <div class="daily-card-top">
+                            <span>13 / SECURITY</span>
+                            <span>↗</span>
+                        </div>
+                        <h3>Unlocking a Smartphone</h3>
+                        <p>
+                            The device checks whether your password or biometric information matches before granting
+                            access.
+                        </p>
+                        <div class="daily-skill">CONDITIONAL LOGIC</div>
+                    </article>
+
+                    <article
+                        class="daily-card"
+                        onclick="
+                            PopExpand(
+                                'Solving a Math Problem',
+                                '14 / EDUCATION',
+                                'Recognize the type of math problem, identify the given information, and follow the correct steps to find the answer.',
+                                'You first identify what kind of problem it is. Then you recall the right formula or method. Finally, you apply the steps in order to arrive at the correct answer.',
+                                'Problem: Find the area of a rectangle\nGiven:  length = 8 cm, width = 5 cm\nFormula: Area = length × width\nSolve:  Area = 8 × 5 = 40 cm²',
+                                'Identify the type of problem first.|Choose the correct formula or method.|Apply the steps carefully and in order.',
+                                '../imageAssets/HomeImageAssets/ContainN.jpg',
+                            )
+                        "
+                    >
+                        <div class="daily-card-top">
+                            <span>14 / EDUCATION</span>
+                            <span>↗</span>
+                        </div>
+                        <h3>Solving a Math Problem</h3>
+                        <p>Recognize the type of problem and apply the appropriate steps to reach an answer.</p>
+                        <div class="daily-skill">PATTERNS + ALGORITHMS</div>
+                    </article>
+
+                    <article
+                        class="daily-card"
+                        onclick="
+                            PopExpand(
+                                'Planning a Trip',
+                                '15 / PLANNING',
+                                'Organize destinations, transportation, expenses, and schedules to make a trip more efficient.',
+                                'You break the trip into components — where to go, how to get there, what to budget, and when to do each thing. Then you arrange them in a logical order.',
+                                'Trip Plan: Beach Outing\n[Destination]: Boracay\n[Transport]:   Bus + Ferry\n[Budget]:      ₱3,500/person\n[Schedule]:\n  Day 1 - Travel & check-in\n  Day 2 - Beach & activities\n  Day 3 - Return home',
+                                'Break the trip into key components.|Plan transport, budget, and schedule separately.|Combine them into a single efficient itinerary.',
+                                '../imageAssets/HomeImageAssets/ContainO.jpg',
+                            )
+                        "
+                    >
+                        <div class="daily-card-top">
+                            <span>15 / PLANNING</span>
+                            <span>↗</span>
+                        </div>
+                        <h3>Planning a Trip</h3>
+                        <p>
+                            Organize destinations, transportation, expenses, and schedules to make a trip more
+                            efficient.
+                        </p>
+                        <div class="daily-skill">DECOMPOSITION + OPTIMIZATION</div>
+                    </article>
+                </div>
+
+                <div class="daily-footer">
+                    <span>15 EXAMPLES OF EVERYDAY PROBLEM-SOLVING</span>
+                    <a href="#concepts">BACK TO THE CORE CONCEPTS ↑</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="page-footer" id="footer">
+            <span>15 COMPUTATIONAL THINKING IN DAILY LIFE</span>
+            <span>THINK CLEARLY. SOLVE BETTER.</span>
+        </footer>
+
+        <!-- Pop-up overlay -->
+        <!-- ONE SHARED POP-UP FOR ALL CARDS -->
+        <div id="popUpOverlay" class="popUpOv" onclick="closePopup(event)">
+            <div class="popBox" onclick="event.stopPropagation()">
+                <div class="popBox-top">
+                    <span id="popupCategory"></span>
+                    <button type="button" onclick="closePopup()">✕</button>
+                </div>
+
+                <div class="popBox-body">
+                    <div class="popBox-left">
+                        <h2 id="popupTitle"></h2>
+                        <p id="popupDescription"></p>
+
+                        <hr class="popBox-divider" />
+
+                        <div class="popBox-section">
+                            <h4><span class="pop-icon"></span> How It Works</h4>
+                            <p id="popupHowItWorks"></p>
+                        </div>
+
+                        <div class="popBox-section">
+                            <h4><span class="pop-icon">&lt;/&gt;</span> Example</h4>
+                            <div class="popBox-code" id="popupExample"></div>
+                        </div>
+                    </div>
+
+                    <div class="popBox-right">
+                        <img id="popupImage" class="popBox-img" src="" alt="Lesson visual" />
+
+                        <div class="popBox-keypoints">
+                            <h4><span class="pop-icon"></span> Key Points</h4>
+                            <ul id="popupKeyPoints"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Message area(GEMINI API KEY USED - FROM YUMI DEV SYSTEM)-->
+
+        <button id="chatButton" class="chat-button">✉</button>
+
+        <div id="chatPopup" class="chat-popup">
+            <div class="chat-header">
+                <div>
+                    <h3>YUMI Assistant</h3>
+                    <p>Ask about computational thinking</p>
+                </div>
+                <button id="closeChat">✕</button>
+            </div>
+
+            <div id="chatMessages" class="chat-messages">
+                <div class="response-container">Hello I Am Yumi a support assistant! What would you like to learn?</div>
+            </div>
+
+            <form id="chatForm" class="chat-form">
+                <input id="chatInput" type="text" placeholder="Type your question..." required />
+                <button type="submit">➤</button>
+            </form>
+        </div>
+
+        <script src="../functions/homefunc.js"></script>
+        <script src="../functions/shared.js"></script>
+        <script src="../functions/responsiveNav.js"></script>
+    </body>
+</html>
